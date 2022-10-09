@@ -1,0 +1,5 @@
+aux_source_directory(. src)
+add_executable(onfesk ${src})
+find_package(MKL REQUIRED)
+include_directories(${MKL_INCLUDE_DIRS})
+target_link_libraries(onfesk ${MKL_LIBRARIES} iomp5)
