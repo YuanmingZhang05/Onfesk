@@ -4,6 +4,10 @@ Onfesk::Onfesk(int k, int m)
 	weights_(std::vector<std::vector<double>>(k, std::vector<double>(m, 0.)))
 {
 }
+/* 
+In what follows, we implement four different online update strategies, 
+including the Percepton, the Passive-Aggressive (PA), the SVM, and the Logistic-Regression (LR).
+*/
 bool Onfesk::update(std::vector<int> s, int label, UpdateStrategy method)
 {
 	std::vector<int> proj(k_);
