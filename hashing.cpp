@@ -18,6 +18,9 @@ uint32_t _hash_state()
 {
 	return mmh3(_internal_state.key, _internal_state.seed);
 }
+/*
+Generate a random variable following the Uniform distribution in floating-point format.
+*/
 double uniform_hash(uint32_t key, uint32_t seed)
 {
 	VSLStreamStatePtr random_stream;
@@ -35,6 +38,9 @@ double uniform_hash(uint32_t key, uint32_t seed)
 	vslDeleteStream(&random_stream);
 	return var;
 }
+/*
+Generate a random variable following the Exponential distribution in floating-point format.
+*/
 double exponential_hash(uint32_t key, uint32_t seed)
 {
 	VSLStreamStatePtr random_stream;
@@ -52,6 +58,10 @@ double exponential_hash(uint32_t key, uint32_t seed)
 	vslDeleteStream(&random_stream);
 	return var;
 }
+
+/*
+Generate a random variable following the Gamma(2,1) distribution in floating-point format.
+*/
 double gamma21_hash(uint32_t key, uint32_t seed)
 {
 	VSLStreamStatePtr random_stream;
@@ -69,6 +79,10 @@ double gamma21_hash(uint32_t key, uint32_t seed)
 	vslDeleteStream(&random_stream);
 	return var;
 }
+
+/*
+Generate a random variable following the Uniform distribution in int format.
+*/
 int uniformint_hash(uint32_t key, uint32_t seed, int low, int high)
 {
 	VSLStreamStatePtr random_stream;
