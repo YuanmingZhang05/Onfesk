@@ -397,6 +397,9 @@ vector<int> BBM_Basic(const vector<double> data, const vector<int> pos,const uin
     return Sketch;
 }
 
+/*
+The FastGM method for the GSM kernel.
+*/
 vector<int> FIPS( const vector<double> data, const vector<int> pos,const uint32_t k, int roundnum){
     long long int r = 0, k_star = k;
     vector<double> yVec(k, -1);
