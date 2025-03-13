@@ -376,7 +376,9 @@ void GetNextBalls(vector<NextBall> &vec, int i, int k, int round_num){
     vec[i].c = vec[i].pi_i[vec[i].m_i];
     generator_vector[i] = generator;
 }
-
+/*
+The original feature sketching method for the GSM kernel.
+*/
 vector<int> BBM_Basic(const vector<double> data, const vector<int> pos,const uint32_t k, int roundnum){
     vector<double> yVec(k, -1);
     vector<int> Sketch(k, -1);
