@@ -7,6 +7,7 @@ The codes must be built with the Intel(R) oneMKL library, which can be obtained 
 ```url
 https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html
 ```
+Onfesk's random variables generation is based on [MurmurHash3](https://dl.acm.org/doi/abs/10.5555/3295222.3295407)
 
 ### Datasets
 Our experiments encompass five real-world datasets, including four non-image datasets (Webspam, URL, RCV1, Real-Sim) and one image dataset (MNIST). 
@@ -52,7 +53,19 @@ DL methods except for two MLP methods are designed for image dataset, thus, we o
 | SpinalNet   |    SpinalNet divides inputs into several splits for each layer to reduce parameters in DNN models.| [Code](https://github.com/dipuk0506/SpinalNet) [Paper](https://arxiv.org/abs/2007.03347)                                                     |DL Method|
 | EtinyNet   |EtinyNet is an extremely tiny CNN backbone for ML models on MCUs.  |[Code](https://github.com/aztc/SpinalNet) [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/20387)                                                     |DL Method|
 
-We also 
+
+### Experiments on Real-world MCUs 
+We also compare our Onfesk against DL baselines on the STM32 MCUs, 
+where all experiments are conducted on ST Edge AI Developer Cloud which can be obtained through:
 ```url
 https://stm32ai-cs.st.com/home
 ```
+We evaluated the average inference time of each method for a data example across several real-world MCUs, including the [STM32G474](https://www.st.com/en/
+microcontrollers-microprocessors/stm32g4x4.html),  [STM32F469](https://www.st.com/en/
+microcontrollers-microprocessors/stm32l469-479.html), and [STM32L4R9](https://www.st.com/en/
+microcontrollers-microprocessors/stm32l4r9-s9.html).
+It is important to note that we omit the training time for each method due to the online setting. 
+For Onfesk, the inference time for a data example exactly equals its processing time during the training stage. 
+In contrast, the DL baselines require significantly more time and memory to process a data example during training because of the extra computation for the backward and intermediate activation,
+often making on-device training infeasible. Specifically, a method’s average inference time is obtained by dividing the number of processed data examples into its total run time.
+
