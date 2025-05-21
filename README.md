@@ -1,7 +1,7 @@
 # Building Accurate and Interpretable Online Classifiers on Edge Devices
 
 This repository contains our implementation of Onfesk, which builds accurate and interpretable online classifiers on edge devices, while providing model interpretability. 
-Specifically, Onfesk_code.cpp is a version that can be compiled independently.
+Specifically, [Onfesk_code.cpp](./Onfesk_code.cpp) is a version that can be compiled independently.
 The rest are the codes used in all experiments. 
 The codes must be built with the Intel(R) oneMKL library, which can be obtained through:
 ```url
@@ -51,6 +51,7 @@ DL methods except for two MLP methods are designed for image dataset, thus, we o
 | MobileNets  |    MobileNets adopts the depthwise separable convolutions to reduce the memory cost of the VGG model| [Code](https://github.com/lyk125/MobileNet-1) [Paper](https://arxiv.org/abs/1704.04861)                                                     |DL Method|
 | SpinalNet   |    SpinalNet divides inputs into several splits for each layer to reduce parameters in DNN models.| [Code](https://github.com/dipuk0506/SpinalNet) [Paper](https://arxiv.org/abs/2007.03347)                                                     |DL Method|
 | EtinyNet   |EtinyNet is an extremely tiny CNN backbone for ML models on MCUs.  |[Code](https://github.com/aztc/SpinalNet) [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/20387)                                                     |DL Method|
+
 We also 
 ```url
 https://stm32ai-cs.st.com/home
