@@ -1,4 +1,5 @@
 #include"mmh3.h"
+\\Please refer to the original paper https://dl.acm.org/doi/abs/10.5555/3295222.3295407 for more details on generating random variables
 uint32_t rol(uint32_t x, uint32_t n)
 {
 	return (x << n) | (x >> (32 - n));
