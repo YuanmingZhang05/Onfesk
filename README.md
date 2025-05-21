@@ -8,8 +8,6 @@ The codes must be built with the Intel(R) oneMKL library, which can be obtained 
 https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html
 ```
 
-Both of our SetXor and SetXorDyn construct a compact bit matrix and performs bitwise XOR operations when adding elements or merging sketches. Additionally, they incorporate a random response mechanism to satisfy Differential Privacy (DP) and estimates the intersection cardinality through the estimation of the difference set cardinality. Moreover, we conducted extensive experiments to compare the performance of our SetXor with the method [SFM](https://arxiv.org/pdf/2302.02056.pdf) and the state-of-the-art method [LL](https://research.google/pubs/pub49177/). 
-
 ### Datasets
 Our experiments encompass five real-world datasets, including four non-image datasets (Webspam, URL, RCV1, Real-Sim) and one image dataset (MNIST). 
 To suit the online setting, we select around 15, 000 examples with the largest length from each datasets and randomly shuffle them.
@@ -38,9 +36,9 @@ https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html#mnist
 ### Methods implemented
 |   Method   |                         Description                          |               Reference                |
 | :--------: | :----------------------------------------------------------: | :------------------------------------: |
-|   SetXor   |                  the original SetXor sketch                  |         [setxor.py](setxor.py)         |
-| SetXor-IVW | improved method for SetXor, providing more accurate estimation |         [setxor.py](setxor.py)         |
-|   SetXorDyn   |                  the original SetXorDyn sketch                  |         [setxor_Dyn.py](setxor_Dyn.py)         |
+|   WM-Sketch|  WM-Sketch applies the Count-Sketch technique to condense the linear model’s weights.       |         [Code](https://github.com/stanford-futuredata/wmsketch) [Paper](https://arxiv.org/abs/1711.02305)          |
+| AWM-Sketch | improved method for WM-Sketch, employing a heap to enhance the precision of the estimations |         [Code](https://github.com/stanford-futuredata/wmsketch) [Paper](https://arxiv.org/abs/1711.02305)         |
+|   Feature Hashing | Feature Hashing [66] employs random projection to map high-dimensional vectors into a lower-dimensional space |        [Code](https://github.com/stanford-futuredata/wmsketch)   [Paper](https://arxiv.org/abs/0902.2206) |
 | SetXorDyn-IVW | improved method for SetXorDyn, providing more accurate estimation |         [setxor_Dyn.py](setxor_Dyn.py)         |
 |  [SFM-Sym](https://arxiv.org/abs/2302.02056)   |                SFM with deterministic merging                | [sfm.py](./baseline/sfm.py) |
 |  [SFM-Xor](https://arxiv.org/abs/2302.02056)   |                   SFM with random merging                    | [sfm.py](./baseline/sfm.py) |
