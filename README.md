@@ -55,6 +55,15 @@ DL methods except for two MLP methods are designed for image dataset, thus, we o
 | EtinyNet   |EtinyNet is an extremely tiny CNN backbone for ML models on MCUs.  |[Code](https://github.com/aztc/SpinalNet) [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/20387)                                                     |DL Method|
 
 
+### Parameters Instruction
+You can use [`main.cpp`](./main.cpp) with the following parameters:
+| Parameter      | Instruction                                                 |type  |
+| -------------- | ----------------------------------------------------------- |----- |
+| k              | The kernel's feature sketch length                          | int  |
+| m              | the approximate one-hot representation length               | int  |
+| p              | The tuning parameter for the kernel space                   |double|
+| input_file_dir | the input file                                              | str  |
+
 ### Experiments on Real-world MCUs 
 We also compare our Onfesk against DL baselines on the STM32 MCUs, 
 where all experiments are conducted on ST Edge AI Developer Cloud which can be obtained through:
