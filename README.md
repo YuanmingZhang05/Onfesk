@@ -1,9 +1,9 @@
 # Building Accurate and Interpretable Online Classifiers on Edge Devices
 
-This repository contains our implementation of Onfesk, which builds provides the intersection cardinality estimation of static and streaming sets respectively, while satisfying Local Differential Privacy (LDP). 
-Onfesk_code.cpp is a version that can be compiled independently.
+This repository contains our implementation of Onfesk, which builds accurate and interpretable online classifiers on edge devices, while providing model interpretability. 
+Specifically, Onfesk_code.cpp is a version that can be compiled independently.
 The rest are the codes used in all experiments. 
-Onfesk must be built with the Intel(R) oneMKL library, which can be obtained through:
+The codes must be built with the Intel(R) oneMKL library, which can be obtained through:
 ```url
 https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html
 ```
@@ -12,7 +12,7 @@ Both of our SetXor and SetXorDyn construct a compact bit matrix and performs bit
 
 ### Datasets
 Our experiments encompass five real-world datasets, including four non-image datasets (Webspam, URL, RCV1, Real-Sim) and one image dataset (MNIST). 
-For the synthetic datasets, we randomly generate unique data from a 32-bit integer space, which is used to construct both static and streaming datasets. 
+To suit the online setting, we select around 15, 000 examples with the largest length from each datasets and randomly shuffle them.
 The Webspam dataset consists of web pages that were automatically collected from the Internet, which can be accessed through the following source: 
 ```url
 https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html#webspam
@@ -26,7 +26,11 @@ The RCV1 dataset is a document-word collection derived from the Reuters Corpus, 
 ```url
 https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html#rcv1.binary
 ```
-The MNIST dataset, we utilize network flows captured from July 3 to July 7, 2017, which can be referred through: 
+The Real-Sim dataset consists of articles from various discussion groups (labeled ), which can be obtained through:
+```url
+https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html#real-sim
+```
+The MNIST dataset contains 28 × 28 pixel images of handwritten digits, which can be referred through: 
 ```url
 https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html#mnist
 ```
