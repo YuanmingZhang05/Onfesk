@@ -60,10 +60,7 @@ where all experiments are conducted on ST Edge AI Developer Cloud which can be o
 ```url
 https://stm32ai-cs.st.com/home
 ```
-We evaluated the average inference time of each method for a data example across several real-world MCUs, including the [STM32G474](https://www.st.com/en/
-microcontrollers-microprocessors/stm32g4x4.html),  [STM32F469](https://www.st.com/en/
-microcontrollers-microprocessors/stm32l469-479.html), and [STM32L4R9](https://www.st.com/en/
-microcontrollers-microprocessors/stm32l4r9-s9.html).
+We evaluated the average inference time of each method for a data example across several real-world MCUs, including the [STM32G474](https://www.st.com/en/microcontrollers-microprocessors/stm32g4x4.html),  [STM32F469](https://www.st.com/en/microcontrollers-microprocessors/stm32l469-479.html), and [STM32L4R9](https://www.st.com/en/microcontrollers-microprocessors/stm32l4r9-s9.html).
 It is important to note that we omit the training time for each method due to the online setting. 
 For Onfesk, the inference time for a data example exactly equals its processing time during the training stage. 
 In contrast, the DL baselines require significantly more time and memory to process a data example during training because of the extra computation for the backward and intermediate activation,
