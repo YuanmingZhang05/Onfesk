@@ -36,12 +36,14 @@ https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html#mnist
 ### Methods implemented
 |   Method   |                         Description                          |               Reference                |
 | :--------: | :----------------------------------------------------------: | :------------------------------------: |
-|   WM-Sketch|  WM-Sketch applies the Count-Sketch technique to condense the linear model’s weights.       |         [Code](https://github.com/stanford-futuredata/wmsketch) [Paper](https://arxiv.org/abs/1711.02305)          |
-| AWM-Sketch | improved method for WM-Sketch, employing a heap to enhance the precision of the estimations |         [Code](https://github.com/stanford-futuredata/wmsketch) [Paper](https://arxiv.org/abs/1711.02305)         |
-|   Feature Hashing | Feature Hashing [66] employs random projection to map high-dimensional vectors into a lower-dimensional space |        [Code](https://github.com/stanford-futuredata/wmsketch)   [Paper](https://arxiv.org/abs/0902.2206) |
-| SetXorDyn-IVW | improved method for SetXorDyn, providing more accurate estimation |         [setxor_Dyn.py](setxor_Dyn.py)         |
-|  [SFM-Sym](https://arxiv.org/abs/2302.02056)   |                SFM with deterministic merging                | [sfm.py](./baseline/sfm.py) |
-|  [SFM-Xor](https://arxiv.org/abs/2302.02056)   |                   SFM with random merging                    | [sfm.py](./baseline/sfm.py) |
+|   WM-Sketch|  WM-Sketch applies the Count-Sketch technique to condense the linear model’s weights.       |         [Code](https://github.com/stanford-futuredata/wmsketch) [Paper](https://arxiv.org/abs/1711.02305)                                            |
+| AWM-Sketch | improved method for WM-Sketch, employing a heap to enhance the precision of the estimations |         [Code](https://github.com/stanford-futuredata/wmsketch) [Paper](https://arxiv.org/abs/1711.02305)                                            |
+|   Feature Hashing | Feature Hashing employs random projection to map high-dimensional vectors into a lower-dimensional space |        [Code](https://github.com/LIBOL/KOL)   [Paper](https://arxiv.org/abs/0902.2206)                                           |
+| Forgetron | Forgetron suits the memory budget by limiting the number of stored examples and discarding the rest. |         [Code](https://github.com/LIBOL/KOL) [Paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/DekelShSi06.pdf)    |
+|  Projectron++   |  Projectron++ limits its memory usage by projecting stored examples into a new space.          | [Code](https://github.com/LIBOL/KOL) [Paper](https://icml.cc/Conferences/2008/papers/355.pdf)|
+|  Ahpatron   |                   Ahpatron approximates the Perceptron with an aggressive and novel updating rule by removing half of the
+stored examples and preserving the informational essence
+of the discarded examples via projection.                    | [Code](https://github.com/alg4ml/Ahpatron) [Paper](https://arxiv.org/abs/2312.07032) |
 |    [HLL](https://dmtcs.episciences.org/3545/pdf)     |                    the HyperLogLog sketch                    | [hll.py](./baseline/hll.py) |
 |     [FM](https://www.sciencedirect.com/science/article/pii/0022000085900418)     |                  the Flajolet-Martin sketch                  |  [fm.py](./baseline/fm.py)  |
 |     [CL](https://research.google/pubs/pub49177/)     |                  the CascadingLegions                  |  [cl.py](./baseline/cl.py)  |
