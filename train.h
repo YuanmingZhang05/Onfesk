@@ -5,8 +5,8 @@ class OnfeskClassifier
 {
 public:
 	enum class SketchType { FastGM, ICWS };
-	int k_, m_, nprocessed_, nerrors_;
-	double p_;
+	int k_, m_, nprocessed_, nerrors_; \\ nprocessed is the number of processed data instances and nerrors_ is the number of misclassified instances
+	double p_; \\ The tunable parameter affecting the kernel space
 	Onfesk::UpdateStrategy method_;
 	Onfesk *classifier_;
 	SketchType sketch_type_;
