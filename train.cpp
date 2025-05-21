@@ -16,7 +16,7 @@ void OnfeskClassifier::evaluate(std::vector<std::vector<double>> &data, std::vec
 	{
 		std::vector<double> x_distorted;
 		std::transform(data[i].begin(), data[i].end(), std::inserter(x_distorted, x_distorted.begin())
-			, [=](double x_i) {return pow(x_i, p_); });
+			, [=](double x_i) {return pow(x_i, p_); }); \\ p is the tunable parameter of the GSM and GMM kernels
 		std::vector<int> sketch;
 		switch (sketch_type_)
 		{
@@ -28,6 +28,6 @@ void OnfeskClassifier::evaluate(std::vector<std::vector<double>> &data, std::vec
 			break;
 		}
 		if (!classifier_->update(sketch, labels[i], method_))
-			nerrors_ += 1;
+			nerrors_ += 1; \\the number of misclassified data examples 
 	}
 }
