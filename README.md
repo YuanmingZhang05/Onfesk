@@ -33,7 +33,7 @@ The MNIST dataset contains 28 × 28 pixel images of handwritten digits, which ca
 https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html#mnist
 ```
 
-### Methods implemented
+### Baseline Methods
 |   Method   |                         Description                          |               Reference                |
 | :--------: | :----------------------------------------------------------: | :------------------------------------: |
 |   WM-Sketch|  WM-Sketch applies the Count-Sketch technique to condense the linear model’s weights.       |         [Code](https://github.com/stanford-futuredata/wmsketch) [Paper](https://arxiv.org/abs/1711.02305)                                            |
@@ -41,13 +41,11 @@ https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html#mnist
 |   Feature Hashing | Feature Hashing employs random projection to map high-dimensional vectors into a lower-dimensional space |        [Code](https://github.com/LIBOL/KOL)   [Paper](https://arxiv.org/abs/0902.2206)                                           |
 | Forgetron | Forgetron suits the memory budget by limiting the number of stored examples and discarding the rest. |         [Code](https://github.com/LIBOL/KOL) [Paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/DekelShSi06.pdf)    |
 |  Projectron++   |  Projectron++ limits its memory usage by projecting stored examples into a new space.          | [Code](https://github.com/LIBOL/KOL) [Paper](https://icml.cc/Conferences/2008/papers/355.pdf)|
-|  Ahpatron   |                   Ahpatron approximates the Perceptron with an aggressive and novel updating rule by removing half of the
-stored examples and preserving the informational essence
-of the discarded examples via projection.                    | [Code](https://github.com/alg4ml/Ahpatron) [Paper](https://arxiv.org/abs/2312.07032) |
-|    [HLL](https://dmtcs.episciences.org/3545/pdf)     |                    the HyperLogLog sketch                    | [hll.py](./baseline/hll.py) |
-|     [FM](https://www.sciencedirect.com/science/article/pii/0022000085900418)     |                  the Flajolet-Martin sketch                  |  [fm.py](./baseline/fm.py)  |
-|     [CL](https://research.google/pubs/pub49177/)     |                  the CascadingLegions                  |  [cl.py](./baseline/cl.py)  |
-|     [LL](https://research.google/pubs/pub49177/)     |                  the LiquidLegions                  |  [ll.py](./baseline/ll.py)  |
+|  Ahpatron   |                   Ahpatron approximates the Perceptron with an aggressive and novel updating rule.            | [Code](https://github.com/alg4ml/Ahpatron) [Paper](https://arxiv.org/abs/2312.07032) |
+|    POMDR     |                    POMDR integrates the optimistic mirror descent and the approximate linear dependence condition                   |  [Code](https://github.com/JunfLi-TJU/OKL-Hinge) [Paper](https://arxiv.org/abs/2212.12989)|
+|     MLP-fp32    |       A standard multi-layer perceptron model learned in an online manner while using 32-bit floatingpoint precision for each neuron                  |   |
+|    MLP-fp32     |                 A standard multi-layer perceptron model learned in an online manner while using 16-bit floatingpoint precision for each neuron                  |    |
+|     VGG-5     |                  This simplified yet effective CNN architecture|  [Paper](https://arxiv.org/abs/1409.1556)  |
 
 We also 
 ```url
